@@ -1,0 +1,31 @@
+﻿<Window x:Class="Intellichess.UI.ParametersWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="Rows, Columns and Targeted x, y" Height="300" Width="300"
+        WindowStartupLocation="CenterOwner" SizeToContent="WidthAndHeight" ShowInTaskbar="False" ResizeMode="NoResize"
+        WindowStyle="ToolWindow">
+    <Grid Margin="10px">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Margin="5">Rows:</Label>
+        <Slider Name="rowsSelectionSlider" Grid.Row="0" Grid.Column="1" Margin="5" AutoToolTipPlacement="BottomRight"
+                Value="15" Maximum="25" SmallChange="1" Minimum="1" />
+        <Label Grid.Row="1" Grid.Column="0" Margin="5">Columns:</Label>
+        <Slider Name="columnsSelectionSlider" Grid.Row="1" Grid.Column="1" Margin="5"
+                AutoToolTipPlacement="BottomRight" Value="10" SmallChange="1" Maximum="25" Minimum="1" />
+        <Label Grid.Row="2" Grid.Column="0" Margin="5">Target:</Label>
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="5" Orientation="Horizontal" VerticalAlignment="Center">
+            <TextBox Name="targetRowTextBox" Width="45" KeyDown="TextBox_KeyDown">8</TextBox>
+            <TextBlock VerticalAlignment="Center" Margin="5,0">x</TextBlock>
+            <TextBox Name="targetColumnTextBox" Width="45" KeyDown="TextBox_KeyDown">6</TextBox>
+        </StackPanel>
+        <Button Name="okayButton" Grid.Row="3" Grid.ColumnSpan="2" Padding="10,3" Margin="0,10,0,0" Width="248"
+                Click="okayButton_Click" IsDefault="True">Okay!</Button>
+    </Grid>
+</Window>
